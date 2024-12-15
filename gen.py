@@ -1,3 +1,5 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -42,4 +44,8 @@ plt.ylabel("f(t)")
 plt.ylim(-1, 1)
 plt.grid(alpha=0.3)
 plt.legend()
+
+os.makedirs("img", exist_ok=True)
+plt.savefig("img/gen.png", dpi=500, bbox_inches="tight")
+
 plt.show()
