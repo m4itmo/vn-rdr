@@ -37,6 +37,11 @@ for k in range(-r, r + 1):
     plt.axvline(k * np.pi / 2, color='red', linewidth=1.0, linestyle=(0, (5, 10)), alpha=0.5)
     plt.text(k * np.pi / 2, 1.05, f'{k}π/2', horizontalalignment='center', fontsize=8)
 
+exclusion_points = [k * np.pi - np.pi / 2 for k in range(-3, 5)]
+exclusion_width = 0.05
+for point in exclusion_points:
+    plt.axvspan(point - exclusion_width, point + exclusion_width, color='white', zorder=3)
+
 plt.xlabel("t")
 plt.ylabel("f(t)")
 plt.ylim(-1, 1)
